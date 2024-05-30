@@ -1,7 +1,10 @@
 import clsx from 'clsx'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 import { Edit, Search, X } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { Dialog, DialogTrigger } from '@/components/ui/dialog'
 import {
   Table,
   TableBody,
@@ -11,6 +14,8 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Supplier } from '@/models/supplier'
+
+import { UpdateSupplierModal } from './update-supplier-modal'
 
 interface SupplierTableProps {
   data: Supplier[]
@@ -45,14 +50,17 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                 {data.email}
               </TableCell>
               <TableCell className="text-muted-foreground">
-                {data.createdAt}
+                {formatDistanceToNow(data.createdAt, {
+                  locale: ptBR,
+                  addSuffix: true,
+                })}
               </TableCell>
               <TableCell>
                 <div className="flex items-center gap-2">
                   <span
                     className={clsx('h-2 w-2 rounded-full', {
-                      'bg-green-500': data.status === 'Ativo',
-                      'bg-red-500': data.status === 'Inativo',
+                      'bg-green-400': data.status === 'Ativo',
+                      'bg-red-400': data.status === 'Inativo',
                     })}
                   />
                   <span className="font-medium text-muted-foreground">
@@ -63,10 +71,16 @@ export function SuppliersTable({ data }: SupplierTableProps) {
               <TableCell className="font-medium">{data.name}</TableCell>
               <TableCell className="font-medium">{data.phone}</TableCell>
               <TableCell>
-                <Button variant="outline" size="sm">
-                  <Edit className="mr-2 h-3 w-3" />
-                  Editar
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm">
+                      <Edit className="mr-2 h-3 w-3" />
+                      Editar
+                    </Button>
+                  </DialogTrigger>
+
+                  <UpdateSupplierModal />
+                </Dialog>
               </TableCell>
               <TableCell>
                 <Button variant="ghost" size="sm">

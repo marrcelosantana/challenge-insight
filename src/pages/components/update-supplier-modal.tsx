@@ -10,12 +10,12 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-export function AddSupplierModal() {
+export function UpdateSupplierModal() {
   return (
     <DialogContent>
       <DialogHeader className="mb-2">
-        <DialogTitle className="text-2xl">Registrar</DialogTitle>
-        <DialogDescription>Adicione um fornecedor aqui.</DialogDescription>
+        <DialogTitle className="text-2xl">Atualizar</DialogTitle>
+        <DialogDescription>Atualize um fornecedor aqui.</DialogDescription>
       </DialogHeader>
       <form className="space-y-5">
         <div className="flex flex-col gap-3">
