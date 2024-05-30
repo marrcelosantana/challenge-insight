@@ -1,0 +1,37 @@
+{
+  "suppliers" : [
+    {
+      "id" : "87f7s983",
+      "name" : "John Doe",
+      "address" : "Rua da Uva - 123",
+      "phone" : "85998470913",
+      "email" : "johndoe@email.com",
+      "createdAt": "2023-01-29T12:36:44.505",
+      "status": "Ativo"
+      
+    },
+
+    {
+      "id" : "9x7b3675x",
+      "name" : "Maria dos Santos",
+      "address" : "Rua dos Coqueiros - 456",
+      "phone" : "85889378762",
+      "email" : "maria@email.com",
+      "createdAt": "2023-01-29T12:36:44.505",
+      "status": "Inativo"
+
+    }, 
+
+    {
+      "id" : "09dhs65g",
+      "name" : "Marcelo Santana",
+      "address" : "Rua das Flores - 789",
+      "phone" : "85997678920",
+      "email" : "marcelo@email.com",
+      "createdAt": "2023-01-29T12:36:44.505",
+      "status": "Ativo"
+
+    }
+    
+  ]
+}
