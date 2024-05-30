@@ -57,7 +57,7 @@ export function UpdateSupplierModal() {
           <Input id="email" />
         </div>
       </form>
-      <DialogFooter>
+      <DialogFooter className="mt-2">
         <DialogClose asChild>
           <Button variant="outline" type="button">
             Cancelar

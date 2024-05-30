@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Dialog, DialogTrigger } from '@/components/ui/dialog'
 
 import { AddSupplierModal } from './components/add-supplier-modal'
+import { InfoCard } from './components/info-card'
 import { SuppliersTable } from './components/suppliers-table'
 
 export default function Dashboard() {
@@ -22,6 +23,11 @@ export default function Dashboard() {
       <div className="w-full flex-1">
         <div className="flex w-full items-center justify-between px-8 py-4">
           <h1 className="text-3xl font-bold tracking-tight">Fornecedores</h1>
+          <div className="flex w-full items-center justify-center gap-6">
+            <InfoCard type="total" data={12} />
+            <InfoCard type="active" data={9} />
+            <InfoCard type="inactive" data={3} />
+          </div>
           <Dialog>
             <DialogTrigger asChild>
               <Button
