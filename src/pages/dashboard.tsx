@@ -19,11 +19,9 @@ export default function Dashboard() {
   return (
     <div className="h-screen w-full">
       <Header />
-
       <div className="w-full flex-1">
         <div className="flex w-full items-center justify-between px-8 py-4">
           <h1 className="text-3xl font-bold tracking-tight">Fornecedores</h1>
-
           <Dialog>
             <DialogTrigger asChild>
               <Button
@@ -34,7 +32,6 @@ export default function Dashboard() {
                 <Plus className="h-4 w-4" />
               </Button>
             </DialogTrigger>
-
             <AddSupplierModal />
           </Dialog>
         </div>

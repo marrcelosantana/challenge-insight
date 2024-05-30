@@ -9,6 +9,13 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 export function UpdateSupplierModal() {
   return (
@@ -17,15 +24,30 @@ export function UpdateSupplierModal() {
         <DialogTitle className="text-2xl">Atualizar</DialogTitle>
         <DialogDescription>Atualize um fornecedor aqui.</DialogDescription>
       </DialogHeader>
-      <form className="space-y-5">
-        <div className="flex flex-col gap-3">
-          <Label htmlFor="name">Nome</Label>
-          <Input id="name" />
+      <form className="w-full space-y-5">
+        <div className="flex w-full items-center justify-between gap-4">
+          <div className="flex w-full flex-col gap-3">
+            <Label htmlFor="name">Nome</Label>
+            <Input id="name" />
+          </div>
+          <div className="flex flex-col gap-3">
+            <Label htmlFor="status">Status</Label>
+            <Select defaultValue="Ativo">
+              <SelectTrigger className="h-8 w-[180px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Ativo">Ativo</SelectItem>
+                <SelectItem value="Inativo">Inativo</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
         <div className="flex flex-col gap-3">
           <Label htmlFor="address">Endereço</Label>
           <Input id="address" />
         </div>
+
         <div className="flex flex-col gap-3">
           <Label htmlFor="phone">Telefone</Label>
           <Input id="phone" />
@@ -41,7 +63,7 @@ export function UpdateSupplierModal() {
             Cancelar
           </Button>
         </DialogClose>
-        <Button variant="success" type="submit">
+        <Button variant="default" type="submit">
           Salvar
         </Button>
       </DialogFooter>
