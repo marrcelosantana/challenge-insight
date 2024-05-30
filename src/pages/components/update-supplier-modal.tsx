@@ -56,17 +56,17 @@ export function UpdateSupplierModal() {
           <Label htmlFor="email">Email</Label>
           <Input id="email" />
         </div>
-      </form>
-      <DialogFooter className="mt-2">
-        <DialogClose asChild>
-          <Button variant="outline" type="button">
-            Cancelar
+        <DialogFooter className="mt-3">
+          <DialogClose asChild>
+            <Button variant="outline" type="button">
+              Cancelar
+            </Button>
+          </DialogClose>
+          <Button variant="default" type="submit">
+            Salvar
           </Button>
-        </DialogClose>
-        <Button variant="default" type="submit">
-          Salvar
-        </Button>
-      </DialogFooter>
+        </DialogFooter>
+      </form>
     </DialogContent>
   )
 }

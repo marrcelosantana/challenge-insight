@@ -29,10 +29,10 @@ export function SuppliersTable({ data }: SupplierTableProps) {
       <TableHeader>
         <TableRow>
           <TableHead></TableHead>
-          <TableHead>Email</TableHead>
+          <TableHead>Fornecedor</TableHead>
           <TableHead>Registrado há</TableHead>
           <TableHead>Status</TableHead>
-          <TableHead>Fornecedor</TableHead>
+          <TableHead>Email</TableHead>
           <TableHead>Telefone</TableHead>
           <TableHead></TableHead>
           <TableHead></TableHead>
@@ -53,9 +53,7 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                   <SupplierDetailsModal supplier={supplier} />
                 </Dialog>
               </TableCell>
-              <TableCell className="font-mono text-xs font-medium">
-                {supplier.email}
-              </TableCell>
+              <TableCell className="font-medium">{supplier.name}</TableCell>
               <TableCell className="text-muted-foreground">
                 {formatDistanceToNow(supplier.createdAt, {
                   locale: ptBR,
@@ -75,7 +73,9 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                   </span>
                 </div>
               </TableCell>
-              <TableCell className="font-medium">{supplier.name}</TableCell>
+              <TableCell className="font-mono text-xs font-medium">
+                {supplier.email}
+              </TableCell>
               <TableCell className="font-medium">{supplier.phone}</TableCell>
               <TableCell>
                 <Dialog>

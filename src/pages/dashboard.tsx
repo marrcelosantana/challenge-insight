@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { Plus } from 'lucide-react'
+import { useState } from 'react'
 
 import { getSuppliers } from '@/api/get-suppliers'
 import { Header } from '@/components/header'
@@ -11,6 +12,8 @@ import { InfoCard } from './components/info-card'
 import { SuppliersTable } from './components/suppliers-table'
 
 export default function Dashboard() {
+  const [addModalOpen, setAddModalOpen] = useState<boolean>(false)
+
   const { data: suppliers } = useQuery({
     queryKey: ['suppliers'],
     queryFn: getSuppliers,
@@ -28,17 +31,17 @@ export default function Dashboard() {
             <InfoCard type="active" data={9} />
             <InfoCard type="inactive" data={3} />
           </div>
-          <Dialog>
+          <Dialog open={addModalOpen} onOpenChange={setAddModalOpen}>
             <DialogTrigger asChild>
               <Button
-                variant="outline"
+                variant="secondary"
                 className="flex items-center justify-center gap-2"
               >
                 <span>Adicionar</span>
                 <Plus className="h-4 w-4" />
               </Button>
             </DialogTrigger>
-            <AddSupplierModal />
+            <AddSupplierModal setModalOpen={setAddModalOpen} />
           </Dialog>
         </div>
         <SuppliersTable data={suppliers} />
