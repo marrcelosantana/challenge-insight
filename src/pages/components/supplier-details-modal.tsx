@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 import { Button } from '@/components/ui/button'
 import {
   DialogClose,
@@ -7,8 +9,14 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { Label } from '@/components/ui/label'
+import { Supplier } from '@/models/supplier'
+import { dateFormatter } from '@/utils/formatters'
 
-export function SupplierDetailsModal() {
+interface SupplierDetailsModalProps {
+  supplier: Supplier
+}
+
+export function SupplierDetailsModal({ supplier }: SupplierDetailsModalProps) {
   return (
     <DialogContent>
       <DialogHeader className="mb-2">
@@ -17,30 +25,43 @@ export function SupplierDetailsModal() {
       <div className="flex h-full w-full flex-col gap-4">
         <div className="flex flex-col gap-2">
           <Label className="font-bold">Identificador</Label>
-          <span className="text-sm text-muted-foreground">ds87d8sd9</span>
+          <span className="text-sm text-muted-foreground">{supplier.id}</span>
         </div>
         <div className="flex flex-col gap-2">
           <Label className="font-bold">Nome</Label>
-          <span className="text-sm text-muted-foreground">John Doe</span>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            {supplier.name}
+            <div
+              className={clsx('h-2 w-2 rounded-full', {
+                'bg-green-400': supplier.status === 'Ativo',
+                'bg-red-400': supplier.status === 'Inativo',
+              })}
+            />
+          </div>
         </div>
         <div className="flex flex-col gap-2">
           <Label className="font-bold">Email</Label>
           <span className="text-sm text-muted-foreground">
-            johndoe@email.com
+            {supplier.email}
+          </span>
+        </div>
+        <div className="flex flex-col gap-2">
+          <Label className="font-bold">Telefone</Label>
+          <span className="text-sm text-muted-foreground">
+            {supplier.phone}
           </span>
         </div>
         <div className="flex flex-col gap-2">
           <Label className="font-bold">Endereço</Label>
           <span className="text-sm text-muted-foreground">
-            Rua da Uva - 789
+            {supplier.address}
           </span>
         </div>
         <div className="flex flex-col gap-2">
-          <Label className="font-bold">Status</Label>
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-green-400" />
-            <span className="text-sm text-muted-foreground">Ativo</span>
-          </div>
+          <Label className="font-bold">Data de Registro</Label>
+          <span className="text-sm text-muted-foreground">
+            {dateFormatter.format(new Date(supplier.createdAt))}
+          </span>
         </div>
       </div>
       <DialogFooter>

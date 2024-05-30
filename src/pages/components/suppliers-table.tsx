@@ -39,9 +39,9 @@ export function SuppliersTable({ data }: SupplierTableProps) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data?.map((data: Supplier) => {
+        {data?.map((supplier: Supplier) => {
           return (
-            <TableRow key={data.id}>
+            <TableRow key={supplier.id}>
               <TableCell>
                 <Dialog>
                   <DialogTrigger asChild>
@@ -50,14 +50,14 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                       <span className="sr-only">Detalhes</span>
                     </Button>
                   </DialogTrigger>
-                  <SupplierDetailsModal />
+                  <SupplierDetailsModal supplier={supplier} />
                 </Dialog>
               </TableCell>
               <TableCell className="font-mono text-xs font-medium">
-                {data.email}
+                {supplier.email}
               </TableCell>
               <TableCell className="text-muted-foreground">
-                {formatDistanceToNow(data.createdAt, {
+                {formatDistanceToNow(supplier.createdAt, {
                   locale: ptBR,
                   addSuffix: true,
                 })}
@@ -66,17 +66,17 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                 <div className="flex items-center gap-2">
                   <span
                     className={clsx('h-2 w-2 rounded-full', {
-                      'bg-green-400': data.status === 'Ativo',
-                      'bg-red-400': data.status === 'Inativo',
+                      'bg-green-400': supplier.status === 'Ativo',
+                      'bg-red-400': supplier.status === 'Inativo',
                     })}
                   />
                   <span className="font-medium text-muted-foreground">
-                    {data.status}
+                    {supplier.status}
                   </span>
                 </div>
               </TableCell>
-              <TableCell className="font-medium">{data.name}</TableCell>
-              <TableCell className="font-medium">{data.phone}</TableCell>
+              <TableCell className="font-medium">{supplier.name}</TableCell>
+              <TableCell className="font-medium">{supplier.phone}</TableCell>
               <TableCell>
                 <Dialog>
                   <DialogTrigger asChild>
