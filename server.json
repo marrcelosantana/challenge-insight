@@ -10,15 +10,6 @@
       "status": "Ativo"
     },
     {
-      "id": "9x7b3675x",
-      "name": "Maria dos Santos",
-      "address": "Rua dos Coqueiros - 456",
-      "phone": "85889378762",
-      "email": "maria@email.com",
-      "createdAt": "2023-01-29T12:36:44.505",
-      "status": "Inativo"
-    },
-    {
       "id": "09dhs65g",
       "name": "Marcelo Santana",
       "address": "Rua das Flores - 789",
@@ -28,40 +19,22 @@
       "status": "Ativo"
     },
     {
-      "id": "30d9ad4e-8333-40e5-b49a-8a3463aa494a",
-      "name": "Tester",
-      "email": "tester@email.com",
-      "phone": "8678990019",
-      "address": "Rua do Tester - 0090",
-      "status": "Inativo",
-      "createdAt": "2024-05-30T21:13:07.679Z"
-    },
-    {
-      "id": "32b18e23-163a-4583-8c0e-281dd03db870",
-      "name": "Nayara Ledo",
+      "id": "0c33d662-a9aa-472d-ac79-a402898e674d",
+      "name": "Nayara Oliveira Ledo",
       "email": "nayara@email.com",
-      "phone": "88988771625",
-      "address": "Rua Albuquerque - 01",
-      "status": "Inativo",
-      "createdAt": "2024-05-30T21:23:02.047Z"
-    },
-    {
-      "id": "a1625ffc-b266-432c-96ab-5c24aaeaa4e2",
-      "name": "Tester 2",
-      "email": "tester2@gmail.com",
-      "phone": "8599999999",
+      "phone": "85938394893",
       "address": "Rua Albuquerque Almeida - 900",
-      "status": "Ativo",
-      "createdAt": "2024-05-30T21:25:47.457Z"
+      "status": "Inativo",
+      "createdAt": "2024-05-30T22:09:51.307Z"
     },
     {
-      "id": "9b95d267-4585-4d22-9d0e-37305523889a",
-      "name": "Igor Santana",
-      "email": "igor@email.com",
-      "phone": "85988771524",
-      "address": "Rua Albuquerque Almeida - 87",
-      "status": "Inativo",
-      "createdAt": "2024-05-30T21:29:36.891Z"
+      "id": "2c04aa14-1efb-4f41-bb7b-3795eab9e9a8",
+      "name": "Endrick Felipe",
+      "email": "endrick@email.com",
+      "phone": "8599999988",
+      "address": "Rua do Tester - 0090",
+      "status": "Ativo",
+      "createdAt": "2024-05-30T22:10:06.064Z"
     }
   ]
 }

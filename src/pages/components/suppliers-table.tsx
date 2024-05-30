@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { Edit, Search, Trash } from 'lucide-react'
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogTrigger } from '@/components/ui/dialog'
@@ -15,7 +16,7 @@ import {
 } from '@/components/ui/table'
 import { Supplier } from '@/models/supplier'
 
-import { RemoveSupplierModal } from './remove-supplier-modal'
+import { DeleteSupplierModal } from './delete-supplier-modal'
 import { SupplierDetailsModal } from './supplier-details-modal'
 import { UpdateSupplierModal } from './update-supplier-modal'
 
@@ -96,7 +97,7 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                       Excluir
                     </Button>
                   </DialogTrigger>
-                  <RemoveSupplierModal />
+                  <DeleteSupplierModal supplierId={supplier.id} />
                 </Dialog>
               </TableCell>
             </TableRow>

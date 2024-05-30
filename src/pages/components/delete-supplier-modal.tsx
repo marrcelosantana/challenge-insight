@@ -1,0 +1,57 @@
+import { useMutation } from '@tanstack/react-query'
+import { toast } from 'sonner'
+
+import { deleteSupplier } from '@/api/delete-supplier'
+import { Button } from '@/components/ui/button'
+import {
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
+import { queryClient } from '@/lib/react-query'
+
+interface DeleteSupplierModalProps {
+  supplierId: string
+}
+
+export function DeleteSupplierModal({ supplierId }: DeleteSupplierModalProps) {
+  const { mutateAsync: deleteSupplierFn } = useMutation({
+    mutationFn: deleteSupplier,
+    onSuccess: () => {
+      toast.success('Fornecedor removido com sucesso.')
+      queryClient.invalidateQueries({ queryKey: ['suppliers'] })
+    },
+  })
+
+  function handleDeleteSupplier() {
+    deleteSupplierFn(supplierId)
+  }
+
+  return (
+    <DialogContent>
+      <DialogHeader className="mb-2">
+        <DialogTitle className="text-2xl">Excluir</DialogTitle>
+      </DialogHeader>
+      <div className="flex h-full w-full">
+        Tem certeza que deseja excluir este fornecedor?
+        <br /> Esta ação não poderá ser desfeita.
+      </div>
+      <DialogFooter>
+        <DialogClose asChild>
+          <Button variant="outline" type="button">
+            Cancelar
+          </Button>
+        </DialogClose>
+        <Button
+          variant="destructive"
+          type="submit"
+          onClick={handleDeleteSupplier}
+        >
+          Excluir
+        </Button>
+      </DialogFooter>
+    </DialogContent>
+  )
+}
