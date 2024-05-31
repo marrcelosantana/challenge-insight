@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { Edit, Search, Trash } from 'lucide-react'
-import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogTrigger } from '@/components/ui/dialog'

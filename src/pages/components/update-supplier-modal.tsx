@@ -63,6 +63,9 @@ export function UpdateSupplierModal({ supplier }: UpdateSupplierModalProps) {
       toast.success('Fornecedor atualizado com sucesso.')
       queryClient.invalidateQueries({ queryKey: ['suppliers'] })
     },
+    onError: () => {
+      toast.error('Ocorreu um erro ao atualizar o fornecedor.')
+    },
   })
 
   function handleUpdateSupplier(data: FormDataType) {

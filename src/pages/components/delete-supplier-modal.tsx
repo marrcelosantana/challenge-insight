@@ -23,6 +23,9 @@ export function DeleteSupplierModal({ supplierId }: DeleteSupplierModalProps) {
       toast.success('Fornecedor removido com sucesso.')
       queryClient.invalidateQueries({ queryKey: ['suppliers'] })
     },
+    onError: () => {
+      toast.error('Ocorreu um erro ao deletar o fornecedor.')
+    },
   })
 
   function handleDeleteSupplier() {
