@@ -30,12 +30,11 @@ export function SuppliersTable({ data }: SupplierTableProps) {
       <TableHeader>
         <TableRow>
           <TableHead></TableHead>
-          <TableHead>Fornecedor</TableHead>
+          <TableHead>Nome</TableHead>
           <TableHead>Registrado há</TableHead>
           <TableHead>Status</TableHead>
           <TableHead>Email</TableHead>
           <TableHead>Telefone</TableHead>
-          <TableHead></TableHead>
           <TableHead></TableHead>
         </TableRow>
       </TableHeader>
@@ -78,7 +77,7 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                 {supplier.email}
               </TableCell>
               <TableCell className="font-medium">{supplier.phone}</TableCell>
-              <TableCell>
+              <TableCell className="flex items-center justify-center gap-4">
                 <Dialog>
                   <DialogTrigger asChild>
                     <Button variant="outline" size="sm">
@@ -86,10 +85,8 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                       Editar
                     </Button>
                   </DialogTrigger>
-                  <UpdateSupplierModal />
+                  <UpdateSupplierModal supplier={supplier} />
                 </Dialog>
-              </TableCell>
-              <TableCell>
                 <Dialog>
                   <DialogTrigger asChild>
                     <Button variant="outline" size="sm">

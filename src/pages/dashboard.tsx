@@ -6,6 +6,7 @@ import { getSuppliers } from '@/api/get-suppliers'
 import { Header } from '@/components/header'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogTrigger } from '@/components/ui/dialog'
+import { Supplier } from '@/models/supplier'
 
 import { AddSupplierModal } from './components/add-supplier-modal'
 import { InfoCard } from './components/info-card'
@@ -20,6 +21,13 @@ export default function Dashboard() {
     staleTime: Infinity,
   })
 
+  const inactives = suppliers?.filter(
+    (supplier: Supplier) => supplier.status === 'Inativo',
+  )
+  const actives = suppliers?.filter(
+    (supplier: Supplier) => supplier.status === 'Ativo',
+  )
+
   return (
     <div className="h-screen w-full">
       <Header />
@@ -27,9 +35,9 @@ export default function Dashboard() {
         <div className="flex w-full items-center justify-between px-8 py-4">
           <h1 className="text-3xl font-bold tracking-tight">Fornecedores</h1>
           <div className="flex w-full items-center justify-center gap-6">
-            <InfoCard type="total" data={12} />
-            <InfoCard type="active" data={9} />
-            <InfoCard type="inactive" data={3} />
+            <InfoCard type="total" data={suppliers?.length} />
+            <InfoCard type="active" data={actives?.length} />
+            <InfoCard type="inactive" data={inactives?.length} />
           </div>
           <Dialog open={addModalOpen} onOpenChange={setAddModalOpen}>
             <DialogTrigger asChild>

@@ -10,31 +10,22 @@
       "status": "Ativo"
     },
     {
-      "id": "09dhs65g",
       "name": "Marcelo Santana",
+      "status": "Inativo",
       "address": "Rua das Flores - 789",
       "phone": "85997678920",
       "email": "marcelo@email.com",
       "createdAt": "2023-01-29T12:36:44.505",
-      "status": "Ativo"
+      "id": "09dhs65g"
     },
     {
-      "id": "0c33d662-a9aa-472d-ac79-a402898e674d",
-      "name": "Nayara Oliveira Ledo",
-      "email": "nayara@email.com",
-      "phone": "85938394893",
-      "address": "Rua Albuquerque Almeida - 900",
-      "status": "Inativo",
-      "createdAt": "2024-05-30T22:09:51.307Z"
-    },
-    {
-      "id": "2c04aa14-1efb-4f41-bb7b-3795eab9e9a8",
-      "name": "Endrick Felipe",
-      "email": "endrick@email.com",
-      "phone": "8599999988",
-      "address": "Rua do Tester - 0090",
+      "name": "Nayara Oliveira",
       "status": "Ativo",
-      "createdAt": "2024-05-30T22:10:06.064Z"
+      "address": "Rua Albuquerque Almeida - 900",
+      "phone": "8588887773",
+      "email": "nayaraledo@email.com",
+      "createdAt": "2024-05-31T00:14:05.205Z",
+      "id": "33ad82fd-a566-45af-aa5c-2ccf4c7d7422"
     }
   ]
 }
