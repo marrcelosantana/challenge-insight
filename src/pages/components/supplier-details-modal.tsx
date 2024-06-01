@@ -20,7 +20,9 @@ export function SupplierDetailsModal({ supplier }: SupplierDetailsModalProps) {
   return (
     <DialogContent>
       <DialogHeader className="mb-2">
-        <DialogTitle className="text-2xl">Detalhes do fornecedor</DialogTitle>
+        <DialogTitle className="text-xl sm:text-2xl">
+          Detalhes do fornecedor
+        </DialogTitle>
       </DialogHeader>
       <div className="flex h-full w-full flex-col gap-4">
         <div className="flex flex-col gap-2">

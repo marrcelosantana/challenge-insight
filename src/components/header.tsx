@@ -25,7 +25,7 @@ export function Header() {
               variant="outline"
               className="flex h-12 items-center justify-center gap-2"
             >
-              <span>Novo Fornecedor</span>
+              <span className="hidden sm:inline">Novo Fornecedor</span>
               <Plus className="h-4 w-4" />
             </Button>
           </DialogTrigger>

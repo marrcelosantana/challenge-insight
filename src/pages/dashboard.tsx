@@ -40,9 +40,11 @@ export default function Dashboard() {
     <div className="h-screen w-full">
       <Header />
       <div className="w-full flex-1">
-        <div className="flex w-full items-center justify-between px-8 py-4">
-          <h1 className="text-3xl font-bold tracking-tight">Fornecedores</h1>
-          <div className="flex items-center justify-center gap-6">
+        <div className="flex w-full flex-col items-center justify-between px-8 py-4 lg:flex-row">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight lg:mb-0">
+            Fornecedores
+          </h1>
+          <div className="flex flex-col items-center justify-center gap-6 lg:flex-row">
             <InfoCard type="total" data={result?.items} />
             <InfoCard type="active" data={actives.length} />
             <InfoCard type="inactive" data={inactives.length} />

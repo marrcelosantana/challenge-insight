@@ -128,7 +128,7 @@ export function AddSupplierModal({ setModalOpen }: AddSupplierModalProps) {
           <Label htmlFor="email">Email</Label>
           <Input id="email" {...register('email')} type="email" />
         </div>
-        <DialogFooter className="mt-3">
+        <DialogFooter className="mt-3 gap-4 sm:gap-1">
           <DialogClose asChild>
             <Button variant="outline" type="button" disabled={isSubmitting}>
               Cancelar

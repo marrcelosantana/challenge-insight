@@ -41,7 +41,7 @@ export function DeleteSupplierModal({ supplierId }: DeleteSupplierModalProps) {
         Tem certeza que deseja excluir este fornecedor?
         <br /> Esta ação não poderá ser desfeita.
       </div>
-      <DialogFooter>
+      <DialogFooter className="gap-3 sm:gap-1">
         <DialogClose asChild>
           <Button variant="outline" type="button">
             Cancelar
