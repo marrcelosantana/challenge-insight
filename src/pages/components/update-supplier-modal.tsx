@@ -60,11 +60,15 @@ export function UpdateSupplierModal({ supplier }: UpdateSupplierModalProps) {
   const { mutateAsync: updateSupplierFn } = useMutation({
     mutationFn: updateSupplier,
     onSuccess: () => {
-      toast.success('Fornecedor atualizado com sucesso.')
-      queryClient.invalidateQueries({ queryKey: ['suppliers'] })
+      toast.success('Fornecedor atualizado com sucesso.', {
+        duration: 3000,
+      })
+      queryClient.invalidateQueries({ queryKey: ['suppliers-page'] })
     },
     onError: () => {
-      toast.error('Ocorreu um erro ao atualizar o fornecedor.')
+      toast.error('Ocorreu um erro ao atualizar o fornecedor.', {
+        duration: 3000,
+      })
     },
   })
 

@@ -188,15 +188,6 @@
       "email": "andre.oliveira@email.com",
       "createdAt": "2022-09-25T09:35:44.123",
       "status": "Inativo"
-    },
-    {
-      "id": "9381a916-a4c9-4667-8239-60dd30b07228",
-      "name": "Tester",
-      "email": "tester@email.com",
-      "phone": "8599631100",
-      "address": "Rua Capitão Aragão",
-      "status": "Inativo",
-      "createdAt": "2024-06-01T00:28:09.174Z"
     }
   ]
 }

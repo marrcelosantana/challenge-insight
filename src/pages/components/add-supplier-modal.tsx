@@ -62,13 +62,17 @@ export function AddSupplierModal({ setModalOpen }: AddSupplierModalProps) {
   const { mutateAsync: registerSupplierFn } = useMutation({
     mutationFn: registerSupplier,
     onSuccess: () => {
-      toast.success('Fornecedor registrado com sucesso.')
-      queryClient.invalidateQueries({ queryKey: ['suppliers'] })
+      toast.success('Fornecedor registrado com sucesso.', {
+        duration: 3000,
+      })
+      queryClient.invalidateQueries({ queryKey: ['suppliers-page'] })
       setModalOpen(false)
       reset()
     },
     onError: () => {
-      toast.error('Erro ao registrar fornecedor.')
+      toast.error('Erro ao registrar fornecedor.', {
+        duration: 3000,
+      })
       setModalOpen(false)
       reset()
     },

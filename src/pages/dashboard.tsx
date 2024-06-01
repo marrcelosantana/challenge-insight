@@ -12,7 +12,7 @@ import { SuppliersTable } from './components/suppliers-table'
 
 export default function Dashboard() {
   const [page, setPage] = useState<number>(1)
-  const perPage = 5
+  const perPage = 8
 
   const { data: all } = useQuery({
     queryKey: ['all-suppliers'],
@@ -40,7 +40,7 @@ export default function Dashboard() {
     <div className="h-screen w-full">
       <Header />
       <div className="w-full flex-1">
-        <div className="flex w-full flex-col items-center justify-between px-8 py-4 lg:flex-row">
+        <div className="mb-4 flex w-full flex-col items-center justify-between px-8 py-4 lg:flex-row">
           <h1 className="mb-4 text-3xl font-bold tracking-tight lg:mb-0">
             Fornecedores
           </h1>

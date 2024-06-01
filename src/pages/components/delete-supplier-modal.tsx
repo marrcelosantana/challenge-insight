@@ -20,11 +20,15 @@ export function DeleteSupplierModal({ supplierId }: DeleteSupplierModalProps) {
   const { mutateAsync: deleteSupplierFn } = useMutation({
     mutationFn: deleteSupplier,
     onSuccess: () => {
-      toast.success('Fornecedor removido com sucesso.')
-      queryClient.invalidateQueries({ queryKey: ['suppliers'] })
+      toast.success('Fornecedor removido com sucesso.', {
+        duration: 3000,
+      })
+      queryClient.invalidateQueries({ queryKey: ['suppliers-page'] })
     },
     onError: () => {
-      toast.error('Ocorreu um erro ao deletar o fornecedor.')
+      toast.error('Ocorreu um erro ao deletar o fornecedor.', {
+        duration: 3000,
+      })
     },
   })
 
