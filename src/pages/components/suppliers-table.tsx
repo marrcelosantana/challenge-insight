@@ -74,10 +74,10 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                   </span>
                 </div>
               </TableCell>
-              <TableCell className="max-w-[120px] font-mono text-xs font-medium">
+              <TableCell className="max-w-[120px] truncate font-mono text-xs font-medium">
                 {supplier.email}
               </TableCell>
-              <TableCell className=" max-w-[120px]  font-medium">
+              <TableCell className=" max-w-[120px] truncate font-medium">
                 {supplier.phone}
               </TableCell>
               <TableCell className="flex items-center justify-center gap-4">

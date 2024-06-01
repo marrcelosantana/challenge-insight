@@ -109,7 +109,7 @@ export default function Dashboard() {
             ) : (
               <div className="flex h-64 items-center justify-center">
                 <span className="text-muted-foreground">
-                  Nenhum fornecedor encontrado.
+                  Sem fornecedores por aqui.
                 </span>
               </div>
             )}

@@ -1,13 +1,13 @@
 {
   "suppliers": [
     {
-      "id": "87f7s983",
       "name": "John Doe",
+      "status": "Inativo",
       "address": "Rua da Uva - 123",
       "phone": "85998470913",
       "email": "johndoe@email.com",
       "createdAt": "2023-01-29T12:36:44.505",
-      "status": "Ativo"
+      "id": "87f7s983"
     },
     {
       "name": "Marcelo Santana",
