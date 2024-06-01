@@ -52,7 +52,9 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                   <SupplierDetailsModal supplier={supplier} />
                 </Dialog>
               </TableCell>
-              <TableCell className="font-medium">{supplier.name}</TableCell>
+              <TableCell className="whitespace-nowrap font-medium">
+                {supplier.name}
+              </TableCell>
               <TableCell className="text-muted-foreground">
                 {formatDistanceToNow(supplier.createdAt, {
                   locale: ptBR,
@@ -72,10 +74,12 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                   </span>
                 </div>
               </TableCell>
-              <TableCell className="font-mono text-xs font-medium">
+              <TableCell className="whitespace-nowrap font-mono text-xs font-medium">
                 {supplier.email}
               </TableCell>
-              <TableCell className="font-medium">{supplier.phone}</TableCell>
+              <TableCell className="whitespace-nowrap font-medium">
+                {supplier.phone}
+              </TableCell>
               <TableCell className="flex items-center justify-center gap-4">
                 <Dialog>
                   <DialogTrigger asChild>
