@@ -9,7 +9,7 @@ interface InfoCardProps {
 
 export function InfoCard({ type, data }: InfoCardProps) {
   return (
-    <Card className="border-muted-foreground">
+    <Card className="min-w-[280px] border-muted-foreground">
       <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-base font-semibold">
           {type === 'total' && 'Total'}
@@ -29,13 +29,11 @@ export function InfoCard({ type, data }: InfoCardProps) {
             Número total de fornecedores.
           </p>
         )}
-
         {type === 'active' && (
           <p className="text-xs text-muted-foreground">
             Número de fornecedores ativos.
           </p>
         )}
-
         {type === 'inactive' && (
           <p className="text-xs text-muted-foreground">
             Número de fornecedores inativos.
