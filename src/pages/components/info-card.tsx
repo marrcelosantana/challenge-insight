@@ -31,12 +31,12 @@ export function InfoCard({ type, data }: InfoCardProps) {
         )}
         {type === 'active' && (
           <p className="text-xs text-muted-foreground">
-            Número de fornecedores ativos.
+            Número total de fornecedores ativos.
           </p>
         )}
         {type === 'inactive' && (
           <p className="text-xs text-muted-foreground">
-            Número de fornecedores inativos.
+            Número total de fornecedores inativos.
           </p>
         )}
       </CardContent>
