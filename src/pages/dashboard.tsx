@@ -65,7 +65,7 @@ export function Dashboard() {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center gap-6 lg:flex-row">
-                <InfoCard type="total" data={result?.total} />
+                <InfoCard type="total" data={allData.length} />
                 <InfoCard type="active" data={actives.length} />
                 <InfoCard type="inactive" data={inactives.length} />
               </div>
@@ -74,7 +74,12 @@ export function Dashboard() {
               <Input
                 className="h-12 w-full lg:w-48"
                 placeholder="Buscar pelo nome..."
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => {
+                  setQuery(e.target.value)
+                  if (page !== 1) {
+                    setPage(1)
+                  }
+                }}
               />
               <Select
                 defaultValue="desc"

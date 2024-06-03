@@ -29,7 +29,10 @@ export function Header() {
               <Plus className="h-4 w-4" />
             </Button>
           </DialogTrigger>
-          <AddSupplierModal setModalOpen={setAddModalOpen} />
+          <AddSupplierModal
+            isModalOpen={addModalOpen}
+            setModalOpen={setAddModalOpen}
+          />
         </Dialog>
         <ThemeToggle />
       </div>

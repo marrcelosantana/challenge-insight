@@ -14,6 +14,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Supplier } from '@/models/supplier'
+import { formatPhone } from '@/utils/formatters'
 
 import { DeleteSupplierModal } from './delete-supplier-modal'
 import { SupplierDetailsModal } from './supplier-details-modal'
@@ -78,7 +79,7 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                 {supplier.email}
               </TableCell>
               <TableCell className=" max-w-[120px] truncate font-medium">
-                {supplier.phone}
+                {formatPhone(supplier.phone)}
               </TableCell>
               <TableCell className="flex items-center justify-center gap-4">
                 <Dialog>

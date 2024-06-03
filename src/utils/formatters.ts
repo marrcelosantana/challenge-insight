@@ -13,3 +13,7 @@ export const dateTimeFormatter = new Intl.DateTimeFormat('pt-BR', {
   minute: 'numeric',
   second: 'numeric',
 })
+
+export const formatPhone = (phone: string) => {
+  return phone.replace(/^(\d{2})(\d{5})(\d{4})/, '($1) $2-$3')
+}
