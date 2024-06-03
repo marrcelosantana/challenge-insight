@@ -7,7 +7,7 @@
 <br>
 <br>
 
-## Sobre o Projeto
+## Sobre o Projeto ✨
 
 Este é um projeto feito como desafio para a bolsa de desenvolvedor front-end na Insight Lab. A aplicação consiste em um sistema de gerenciamento de fornecedores para uma empresa.
 
@@ -25,7 +25,7 @@ Este é um projeto feito como desafio para a bolsa de desenvolvedor front-end na
 - [Zod](https://zod.dev/)
 - [ShadcnUI](https://ui.shadcn.com/)
 
-### Como rodar a aplicação
+### Como rodar a aplicação 🚀
 
 ```bash
 # Clone este repositório
@@ -39,21 +39,15 @@ $ npm start
 
 ```
 
-### Link de um video mostrando o sistema
+### LINKS 🔗
+[Video mostrando a aplicacão.](https://youtu.be/FoBDhh5-SgE)
 
-https://youtu.be/FoBDhh5-SgE
+[Front-End em produção.](https://challenge-insight.vercel.app/)
 
-### Link do Front-End em produção
+[API em produção.](https://challenge-insight-api-3ed6399e7cfd.herokuapp.com/)
 
-https://challenge-insight.vercel.app/
 
-### Link do API em produção
 
-https://challenge-insight-api-3ed6399e7cfd.herokuapp.com/
 
-### Responsividade
 
-|                  Tela 1                   |                 Tela 2                 |
-| :----------------------------------------: | :--------------------------------------: |
-| <img src= "public/screenshots/tela1.png"> | <img src= "public/screenshots/tela2.png"> |
 
