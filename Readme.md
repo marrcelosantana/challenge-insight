@@ -18,12 +18,13 @@ Este é um projeto feito como desafio para a bolsa de desenvolvedor front-end na
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind](https://tailwindcss.com/)
 - [Eslint](https://eslint.org/)
-- [Json-server](https://github.com/typicode/json-server)
+- [Json-Server](https://github.com/typicode/json-server)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
+- [React Query](https://tanstack.com/query/latest/docs/framework/react/overview)
 - [React Router](https://reactrouter.com/en/main)
 - [React Hook Form](https://react-hook-form.com/)
 - [Zod](https://zod.dev/)
-- [ShadcnUI](https://ui.shadcn.com/)
+- [Shadcn UI](https://ui.shadcn.com/)
 
 ### Como rodar a aplicação 🚀
 
