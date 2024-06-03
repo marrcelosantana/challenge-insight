@@ -95,7 +95,7 @@ export function UpdateSupplierModal({ supplier }: UpdateSupplierModalProps) {
         <DialogDescription>Atualize um fornecedor aqui.</DialogDescription>
       </DialogHeader>
       <form
-        className="w-full space-y-6"
+        className="w-full space-y-7"
         onSubmit={handleSubmit(handleUpdateSupplier)}
       >
         <div className="flex w-full items-center justify-between gap-4">
