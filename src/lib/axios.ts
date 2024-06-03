@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3000/',
+  baseURL: 'https://challenge-insight-api-3ed6399e7cfd.herokuapp.com',
 })

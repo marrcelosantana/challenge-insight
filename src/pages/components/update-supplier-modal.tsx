@@ -64,6 +64,7 @@ export function UpdateSupplierModal({ supplier }: UpdateSupplierModalProps) {
         duration: 3000,
       })
       queryClient.invalidateQueries({ queryKey: ['suppliers-page'] })
+      queryClient.invalidateQueries({ queryKey: ['all-suppliers'] })
     },
     onError: () => {
       toast.error('Ocorreu um erro ao atualizar o fornecedor.', {

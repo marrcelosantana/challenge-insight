@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement>
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, placeholder, type, ...props }, ref) => {
     return (
       <input
         type={type}
@@ -15,7 +15,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         ref={ref}
         {...props}
-        placeholder="Clique para preencher"
+        placeholder={placeholder ?? 'Clique para preencher'}
       />
     )
   },

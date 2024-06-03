@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 
-import { getAllSuppliers } from '@/api/get-all-supliers'
+import { getAllSuppliers } from '@/api/get-all-suppliers'
 import { getSuppliers } from '@/api/get-suppliers'
 import { Header } from '@/components/header'
+import { Input } from '@/components/ui/input'
 import {
   Select,
   SelectContent,
@@ -21,8 +22,9 @@ import { TableSkeleton } from './components/table-skeleton'
 
 export default function Dashboard() {
   const [page, setPage] = useState<number>(1)
-  const [status, setStatus] = useState<string>('')
-  const perPage = 7
+  const [order, setOrder] = useState<string>('desc')
+  const [query, setQuery] = useState<string>('')
+  const limit = 7
 
   const { data: all, isLoading: isLoadingAll } = useQuery({
     queryKey: ['all-suppliers'],
@@ -31,12 +33,12 @@ export default function Dashboard() {
   })
 
   const { data: result, isLoading: isLoadingPage } = useQuery({
-    queryKey: ['suppliers-page', page, perPage, status],
-    queryFn: () => getSuppliers({ page, perPage, status }),
+    queryKey: ['suppliers-page', page, limit, order, query],
+    queryFn: () => getSuppliers({ page, limit, order, query }),
     staleTime: Infinity,
   })
 
-  const suppliers: Supplier[] = result?.data ?? []
+  const suppliers: Supplier[] = result?.suppliers ?? []
   const allData: Supplier[] = all ?? []
 
   const inactives = allData.filter(
@@ -63,28 +65,30 @@ export default function Dashboard() {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center gap-6 lg:flex-row">
-                <InfoCard type="total" data={result?.items ?? 0} />
+                <InfoCard type="total" data={result?.total} />
                 <InfoCard type="active" data={actives.length} />
                 <InfoCard type="inactive" data={inactives.length} />
               </div>
             )}
-            <div className="flex w-full items-center justify-center lg:justify-end">
+
+            <div className="flex w-full flex-col items-center justify-center gap-2 lg:flex-row lg:justify-end">
+              <Input
+                className="h-12 w-full lg:w-48"
+                placeholder="Buscar pelo nome..."
+                onChange={(e) => setQuery(e.target.value)}
+              />
               <Select
-                defaultValue="all"
+                defaultValue="desc"
                 onValueChange={(value) => {
-                  setStatus(value)
-                  if (value === 'all') {
-                    setStatus('')
-                  }
+                  setOrder(value)
                 }}
               >
-                <SelectTrigger className="h-12 w-[180px]">
-                  <SelectValue placeholder="Filtre por status" />
+                <SelectTrigger className="h-12 w-full lg:w-[180px]">
+                  <SelectValue placeholder="Ordem" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">Todos</SelectItem>
-                  <SelectItem value="Ativo">Ativos</SelectItem>
-                  <SelectItem value="Inativo">Inativos</SelectItem>
+                  <SelectItem value="desc">Mais Recentes</SelectItem>
+                  <SelectItem value="asc">Mais antigos</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -100,8 +104,8 @@ export default function Dashboard() {
                 <div className="mt-4 pb-4">
                   <Pagination
                     pageIndex={page - 1}
-                    perPage={perPage}
-                    totalCount={allData.length}
+                    perPage={limit}
+                    totalCount={result?.total}
                     onPageChange={(newPageIndex) => setPage(newPageIndex + 1)}
                   />
                 </div>

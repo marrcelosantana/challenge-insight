@@ -66,6 +66,7 @@ export function AddSupplierModal({ setModalOpen }: AddSupplierModalProps) {
         duration: 3000,
       })
       queryClient.invalidateQueries({ queryKey: ['suppliers-page'] })
+      queryClient.invalidateQueries({ queryKey: ['all-suppliers'] })
       setModalOpen(false)
       reset()
     },

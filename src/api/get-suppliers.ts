@@ -2,17 +2,22 @@ import { api } from '@/lib/axios'
 
 type GetSuppliersParams = {
   page?: number
-  perPage?: number
-  status?: string
+  limit?: number
+  query?: string
+  order?: string
 }
 
 export async function getSuppliers({
   page,
-  perPage,
-  status,
+  limit,
+  order,
+  query,
 }: GetSuppliersParams) {
   const response = await api.get(
-    `/suppliers?_page=${page}&_per_page=${perPage}&status=${status}`,
+    `/suppliers?_page=${page}&_limit=${limit}&_sort=createdAt&_order=${order}&name_like=${query}`,
   )
-  return response.data
+  return {
+    suppliers: response.data,
+    total: response.headers['x-total-count'],
+  }
 }
