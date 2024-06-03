@@ -85,6 +85,9 @@ export function Dashboard() {
                 defaultValue="desc"
                 onValueChange={(value) => {
                   setOrder(value)
+                  if (page !== 1) {
+                    setPage(1)
+                  }
                 }}
               >
                 <SelectTrigger className="h-12 w-full lg:w-[180px]">
