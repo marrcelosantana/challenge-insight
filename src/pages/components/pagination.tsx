@@ -25,7 +25,8 @@ export function Pagination({
   return (
     <div className="flex items-center justify-between px-4 md:px-8">
       <span className="text-sm text-muted-foreground">
-        Total de {totalCount} {totalCount > 0 && totalCount < 2 ? 'item' : 'itens'}
+        Total de {totalCount}{' '}
+        {totalCount > 0 && totalCount < 2 ? 'item' : 'itens'}
       </span>
 
       <div className="flex items-center gap-6 lg:gap-8">
