@@ -25,7 +25,7 @@ interface SupplierTableProps {
 
 export function SuppliersTable({ data }: SupplierTableProps) {
   return (
-    <Table>
+    <Table className="border-y-2">
       <TableHeader>
         <TableRow>
           <TableHead></TableHead>

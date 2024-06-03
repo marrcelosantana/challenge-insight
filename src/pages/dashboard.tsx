@@ -20,7 +20,7 @@ import { Pagination } from './components/pagination'
 import { SuppliersTable } from './components/suppliers-table'
 import { TableSkeleton } from './components/table-skeleton'
 
-export default function Dashboard() {
+export function Dashboard() {
   const [page, setPage] = useState<number>(1)
   const [order, setOrder] = useState<string>('desc')
   const [query, setQuery] = useState<string>('')
@@ -70,7 +70,6 @@ export default function Dashboard() {
                 <InfoCard type="inactive" data={inactives.length} />
               </div>
             )}
-
             <div className="flex w-full flex-col items-center justify-center gap-2 lg:flex-row lg:justify-end">
               <Input
                 className="h-12 w-full lg:w-48"
