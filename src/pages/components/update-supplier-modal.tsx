@@ -33,7 +33,7 @@ const updateSchema = z.object({
   address: z.string().min(1, 'Campo obrigatório.'),
   phone: z
     .string()
-    .min(1, 'Campo obrigatório.')
+    .min(11, 'Campo obrigatório, min 11 caracteres.')
     .max(11, 'Telefone inválido, máx 11 caracteres.'),
   email: z.string().min(1, 'Campo obrigatório.').email('Email inválido.'),
 })
