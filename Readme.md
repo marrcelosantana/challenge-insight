@@ -9,7 +9,7 @@
 
 ## Sobre o Projeto ✨
 
-Este é um projeto feito como desafio para a bolsa de desenvolvedor front-end na Insight Lab. A aplicação consiste em um sistema de gerenciamento de fornecedores para uma empresa.
+A aplicação consiste basicamente em um sistema de gerenciamento de fornecedores para uma empresa.
 
 ### Tecnologias Usadas
 
