@@ -41,7 +41,6 @@ $ npm start
 ```
 
 ### LINKS 🔗
-[Video mostrando a aplicacão.](https://youtu.be/FoBDhh5-SgE)
 
 [Front-End em produção.](https://challenge-insight.vercel.app/)
 
