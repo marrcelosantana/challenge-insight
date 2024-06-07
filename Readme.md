@@ -34,9 +34,9 @@ $ git clone https://github.com/marrcelosantana/challenge-insight
 # Acesse a pasta do projeto
 $ cd challenge-insight
 # Instale as dependências
-$ npm install
+$ pnpm install
 # Execute a aplicação
-$ npm start
+$ pnpm start
 
 ```
 

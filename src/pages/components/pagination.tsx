@@ -24,11 +24,11 @@ export function Pagination({
 
   return (
     <div className="flex items-center justify-between px-4 md:px-8">
-      <span className="text-sm text-muted-foreground">
-        Total de {totalCount}{' '}
-        {totalCount > 0 && totalCount < 2 ? 'item' : 'itens'}
-      </span>
-
+      <div className="space-x-1 whitespace-nowrap text-sm text-muted-foreground">
+        <span className="hidden md:inline">Total de</span>
+        <span>{totalCount}</span>
+        <span>{totalCount > 0 && totalCount < 2 ? 'item' : 'itens'}</span>
+      </div>
       <div className="flex items-center gap-6 lg:gap-8">
         <div className="text-sm font-medium">
           Pag {pageIndex + 1} de {pages}
