@@ -85,12 +85,25 @@ export function AddSupplierModal({
     },
   })
 
+  function emailAlreadyExists(email: string) {
+    const suppliers = queryClient.getQueryData<Supplier[]>(['all-suppliers'])
+    return suppliers?.some((supplier: Supplier) => supplier.email === email)
+  }
+
   function handleRegister(data: FormDataType) {
     const payload: Supplier = {
       id: uuidv4(),
       createdAt: new Date().toISOString(),
       ...data,
     }
+
+    if (emailAlreadyExists(payload.email)) {
+      toast.error('Email já cadastrado, tente novamente!', {
+        duration: 3000,
+      })
+      return
+    }
+
     registerSupplierFn(payload)
   }
 

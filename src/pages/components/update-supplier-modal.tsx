@@ -79,12 +79,26 @@ export function UpdateSupplierModal({ supplier }: UpdateSupplierModalProps) {
     },
   })
 
+  function emailAlreadyExists(email: string) {
+    const suppliers = queryClient.getQueryData<Supplier[]>(['all-suppliers'])
+    return suppliers?.some((supplier: Supplier) => supplier.email === email)
+  }
+
   function handleUpdateSupplier(data: FormDataType) {
     const payload: Supplier = {
       ...data,
       id: supplier.id,
       createdAt: supplier.createdAt,
     }
+
+    if (emailAlreadyExists(payload.email)) {
+      toast.error('Cliente não atualizado, email já existente!', {
+        duration: 3000,
+      })
+      reset()
+      return
+    }
+
     updateSupplierFn(payload)
   }
 
