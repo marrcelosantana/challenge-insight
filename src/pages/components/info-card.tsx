@@ -9,7 +9,7 @@ interface InfoCardProps {
 
 export function InfoCard({ type, data }: InfoCardProps) {
   return (
-    <Card className="min-w-[280px] border-muted-foreground">
+    <Card className="min-w-[280px] border-accent-foreground">
       <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-base font-semibold">
           {type === 'total' && 'Total'}

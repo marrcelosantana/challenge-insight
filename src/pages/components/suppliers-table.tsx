@@ -45,7 +45,7 @@ export function SuppliersTable({ data }: SupplierTableProps) {
               <TableCell>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline" size="sm">
+                    <Button variant="secondary" size="sm">
                       <Search className="h-3 w-3" />
                       <span className="sr-only">Detalhes</span>
                     </Button>
@@ -84,7 +84,7 @@ export function SuppliersTable({ data }: SupplierTableProps) {
               <TableCell className="flex items-center justify-center gap-4">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline" size="sm">
+                    <Button variant="secondary" size="sm">
                       <Edit className="mr-2 h-3 w-3" />
                       Editar
                     </Button>
@@ -93,7 +93,7 @@ export function SuppliersTable({ data }: SupplierTableProps) {
                 </Dialog>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline" size="sm">
+                    <Button variant="secondary" size="sm">
                       <Trash className="mr-2 h-3 w-3" />
                       Excluir
                     </Button>

@@ -21,10 +21,7 @@ export function Header() {
       <div className="flex items-center justify-center gap-2">
         <Dialog open={addModalOpen} onOpenChange={setAddModalOpen}>
           <DialogTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex h-12 items-center justify-center gap-2"
-            >
+            <Button className="flex h-12 items-center justify-center gap-2">
               <span className="hidden sm:inline">Novo Fornecedor</span>
               <Plus className="h-4 w-4" />
             </Button>

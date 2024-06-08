@@ -68,7 +68,7 @@ export function SupplierDetailsModal({ supplier }: SupplierDetailsModalProps) {
       </div>
       <DialogFooter>
         <DialogClose asChild>
-          <Button variant="outline" type="button">
+          <Button variant="secondary" type="button">
             Fechar
           </Button>
         </DialogClose>
