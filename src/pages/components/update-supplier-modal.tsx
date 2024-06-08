@@ -91,7 +91,7 @@ export function UpdateSupplierModal({ supplier }: UpdateSupplierModalProps) {
       createdAt: supplier.createdAt,
     }
 
-    if (emailAlreadyExists(payload.email)) {
+    if (emailAlreadyExists(payload.email) && payload.email !== supplier.email) {
       toast.error('Cliente não atualizado, email já existente!', {
         duration: 3000,
       })
