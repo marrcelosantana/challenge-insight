@@ -24,8 +24,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { queryClient } from '@/lib/react-query'
 import { Supplier } from '@/models/supplier'
+import { emailAlreadyExists, loadSuppliers } from '@/utils/functions'
 
 const updateSchema = z.object({
   name: z.string().min(1, 'Campo obrigatório.'),
@@ -69,8 +69,7 @@ export function UpdateSupplierModal({ supplier }: UpdateSupplierModalProps) {
       toast.success('Fornecedor atualizado com sucesso.', {
         duration: 3000,
       })
-      queryClient.invalidateQueries({ queryKey: ['suppliers-page'] })
-      queryClient.invalidateQueries({ queryKey: ['all-suppliers'] })
+      loadSuppliers()
     },
     onError: () => {
       toast.error('Ocorreu um erro ao atualizar o fornecedor.', {
@@ -78,11 +77,6 @@ export function UpdateSupplierModal({ supplier }: UpdateSupplierModalProps) {
       })
     },
   })
-
-  function emailAlreadyExists(email: string) {
-    const suppliers = queryClient.getQueryData<Supplier[]>(['all-suppliers'])
-    return suppliers?.some((supplier: Supplier) => supplier.email === email)
-  }
 
   function handleUpdateSupplier(data: FormDataType) {
     const payload: Supplier = {

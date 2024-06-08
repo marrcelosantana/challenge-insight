@@ -26,8 +26,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { queryClient } from '@/lib/react-query'
 import { Supplier } from '@/models/supplier'
+import { emailAlreadyExists, loadSuppliers } from '@/utils/functions'
 
 const registerSchema = z.object({
   name: z.string().min(1, 'Campo obrigatório.'),
@@ -71,8 +71,7 @@ export function AddSupplierModal({
       toast.success('Fornecedor registrado com sucesso.', {
         duration: 3000,
       })
-      queryClient.invalidateQueries({ queryKey: ['suppliers-page'] })
-      queryClient.invalidateQueries({ queryKey: ['all-suppliers'] })
+      loadSuppliers()
       setModalOpen(false)
       reset()
     },
@@ -84,11 +83,6 @@ export function AddSupplierModal({
       reset()
     },
   })
-
-  function emailAlreadyExists(email: string) {
-    const suppliers = queryClient.getQueryData<Supplier[]>(['all-suppliers'])
-    return suppliers?.some((supplier: Supplier) => supplier.email === email)
-  }
 
   function handleRegister(data: FormDataType) {
     const payload: Supplier = {

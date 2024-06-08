@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { queryClient } from '@/lib/react-query'
+import { loadSuppliers } from '@/utils/functions'
 
 interface DeleteSupplierModalProps {
   supplierId: string
@@ -23,8 +23,7 @@ export function DeleteSupplierModal({ supplierId }: DeleteSupplierModalProps) {
       toast.success('Fornecedor removido com sucesso.', {
         duration: 3000,
       })
-      queryClient.invalidateQueries({ queryKey: ['suppliers-page'] })
-      queryClient.invalidateQueries({ queryKey: ['all-suppliers'] })
+      loadSuppliers()
     },
     onError: () => {
       toast.error('Ocorreu um erro ao deletar o fornecedor.', {
