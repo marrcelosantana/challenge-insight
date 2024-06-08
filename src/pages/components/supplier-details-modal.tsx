@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dialog'
 import { Label } from '@/components/ui/label'
 import { Supplier } from '@/models/supplier'
-import { dateFormatter } from '@/utils/formatters'
+import { dateFormatter, formatPhone } from '@/utils/formatters'
 
 interface SupplierDetailsModalProps {
   supplier: Supplier
@@ -50,7 +50,7 @@ export function SupplierDetailsModal({ supplier }: SupplierDetailsModalProps) {
         <div className="flex flex-col gap-2">
           <Label className="font-bold">Telefone</Label>
           <span className="text-sm text-muted-foreground">
-            {supplier.phone}
+            {formatPhone(supplier.phone)}
           </span>
         </div>
         <div className="flex flex-col gap-2">
